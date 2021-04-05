@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
-const Coin = ({ coinName, image, symbol, price, volume }) => {
+const Coin = ({ coinName, image, symbol, price, volume, priceChange, marketCap }) => {
 
   return (
     <div className="coin-container">
@@ -17,6 +17,18 @@ const Coin = ({ coinName, image, symbol, price, volume }) => {
           </p>
           <p className="coin-volume">
             ${volume.toLocaleString()}
+          </p>
+          {priceChange < 0 ? (
+            <p className="coin-percent red">
+              {priceChange.toFixed(2)}%
+            </p>
+          ) : (
+            <p className="coin-percent green">
+              {priceChange.toFixed(2)}%
+            </p>
+          )}
+          <p className="coin-marketcap">
+            Market Cap: ${marketCap.toLocaleString()}
           </p>
         </div>
       </div>
