@@ -1,9 +1,11 @@
+import React from 'react';
 import './App.css';
+import Main from './components/Main.js';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Api</h1>
+      <Main />
     </div>
   );
 }
