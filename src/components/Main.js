@@ -10,12 +10,18 @@ const Main = () => {
         setCoins(rs.data);
         console.log(rs.data);
       })
-  });
+      .catch(erorr => console.log(erorr))
+  }, []);
 
   return (
-    <React.Fragment>
-      <h1>Hello?</h1>
-    </React.Fragment>
+    <mian className="coin-app">
+      <div className="coin-search">
+        <h1 className="coin-text">Search a currency</h1>
+        <form>
+          <input type='text' placeholder="Search" className="coin-input" />
+        </form>
+      </div>
+    </mian>
   );
 }
 
